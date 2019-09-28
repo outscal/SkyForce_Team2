@@ -2,17 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FighterJetModel : MonoBehaviour
+namespace SkyForce.FighterJet
 {
-    // Start is called before the first frame update
-    void Start()
+    public class FighterJetModel
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private FighterJetView jetPrefab;
+        public FighterJetView JetPrefab{get {return jetPrefab; }}
+        public FighterJetModel(PlayerJetScriptableObject jetProperties)
+        {
+            jetPrefab = jetProperties.JetPrefab;
+        }
     }
 }

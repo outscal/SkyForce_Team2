@@ -2,17 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FighterJetView : MonoBehaviour
+namespace SkyForce.FighterJet
 {
-    // Start is called before the first frame update
-    void Start()
+    public class FighterJetView : MonoBehaviour
     {
-        
-    }
+        private FighterJetController controller;
+        public void SetPositionTo(Vector3 newPosition)
+        {
+            transform.position = newPosition;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public Vector3 GetPosition()
+        {
+            return transform.position;
+        }
+
+        public void SetController(FighterJetController _controller)
+        {
+            controller = _controller;
+        }
+
+        private void Update() 
+        {
+            if (controller == null)
+            {
+                return;
+            }
+
+            controller.CheckAndFire();
+        }
+
+        public IEnumerator Reload()
+        {
+            yield return new WaitForSeconds(1);
+            controller.IsLoaded = true;
+        }
     }
 }

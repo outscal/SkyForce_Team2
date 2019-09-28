@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerJetScriptableObject : ScriptableObject
+namespace SkyForce.FighterJet
 {
+    [CreateAssetMenu(menuName="ScriptableObjects/PlayerJetScriptableObject")]
+    public class PlayerJetScriptableObject : ScriptableObject
+    {
+        public FighterJetView JetPrefab;
+        public float FiringDelay;
+    }
 }

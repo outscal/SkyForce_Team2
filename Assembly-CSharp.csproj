@@ -53,11 +53,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Bullet\BulletController.cs" />
+     <Compile Include="Assets\Scripts\Bullet\BulletScriptableObject.cs" />
+     <Compile Include="Assets\Scripts\Bullet\BulletService.cs" />
+     <Compile Include="Assets\Scripts\Bullet\BulletView.cs" />
+     <Compile Include="Assets\Scripts\Extensions\Vector3Extension.cs" />
      <Compile Include="Assets\Scripts\FighterJet\FighterJetController.cs" />
      <Compile Include="Assets\Scripts\FighterJet\FighterJetModel.cs" />
      <Compile Include="Assets\Scripts\FighterJet\FighterJetService.cs" />
      <Compile Include="Assets\Scripts\FighterJet\FighterJetView.cs" />
      <Compile Include="Assets\Scripts\FighterJet\PlayerJetScriptableObject.cs" />
+     <Compile Include="Assets\Scripts\Generics\GenericMonoSingleton.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/DATA/Projects/Workspace/SkyForce_Team2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>

@@ -2,16 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FighterJetService : MonoBehaviour
+namespace SkyForce.FighterJet
 {
-    private FighterJetController fighterJet;
-    void Start()
+    public class FighterJetService : GenericMonoSingleton<FighterJetService>
     {
-        fighterJet = new FighterJetController();
-    }
+        [SerializeField]
+        private PlayerJetScriptableObject fighterJetData;
+        private FighterJetController fighterJet;
+        void Start()
+        {
+            fighterJet = new FighterJetController(fighterJetData);
+        }
 
-    void Update()
-    {
-        
+        void Update()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                fighterJet.SetPositionTo(Camera.main.ScreenToWorldPoint(Input.mousePosition).SetZ(0));
+            }
+        }
     }
 }

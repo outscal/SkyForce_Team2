@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c4e33c420e02724d89d4aa871453a77, type: 3}
+  m_Name: PlayerJet1
+  m_EditorClassIdentifier: 
+  JetPrefab: {fileID: 2007429483128918570, guid: 69c312d07776b70429802bc0aed9b989,
+    type: 3}
+  FiringDelay: 1
