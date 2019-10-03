@@ -8,9 +8,15 @@ namespace SkyForce.Bullet
     {
         [SerializeField]
         private BulletScriptableObject jetBulletScriptableObject;
+        private BulletPool playerBulletPool;
+
+        private void Start() {
+            playerBulletPool = new BulletPool();
+        }
+
         public BulletController GetBullet(Vector3 position)
         {
-            return new BulletController(jetBulletScriptableObject, position);
+            return playerBulletPool.GetBulletFromPool(jetBulletScriptableObject, position);
         }
 
     }

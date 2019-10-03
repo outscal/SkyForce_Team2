@@ -31,11 +31,5 @@ namespace SkyForce.FighterJet
 
             controller.CheckAndFire();
         }
-
-        public IEnumerator Reload()
-        {
-            yield return new WaitForSeconds(1);
-            controller.IsLoaded = true;
-        }
     }
 }

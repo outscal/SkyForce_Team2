@@ -9,13 +9,13 @@ namespace SkyForce.FighterJet
     {
         private FighterJetModel model;
         private FighterJetView view;
-        public bool IsLoaded{get; set; }
+        private bool isLoaded;
         public FighterJetController(PlayerJetScriptableObject fighterJetProperties)
         {
             model = new FighterJetModel(fighterJetProperties);
             view = GameObject.Instantiate<FighterJetView>(model.JetPrefab, new Vector2(0,0), Quaternion.identity);
             view.SetController(this);
-            IsLoaded = true;
+            isLoaded = true;
         }
 
         public void SetPositionTo(Vector3 newPosition)
@@ -23,14 +23,25 @@ namespace SkyForce.FighterJet
             view.SetPositionTo(newPosition);
         }
 
+        public Vector3 GetPosition()
+        {
+            return view.GetPosition();
+        }
+
         public void CheckAndFire()
         {
-            if(IsLoaded == true)
+            if(isLoaded == true)
             {
                 BulletService.Instance.GetBullet(view.GetPosition());
-                IsLoaded = false;
-                view.Reload();
+                isLoaded = false;
+                Reload();
             }
+        }
+
+        public async void Reload()
+        {
+            await new WaitForSeconds(model.ReloadTime);
+            isLoaded = true;
         }
     }
 }

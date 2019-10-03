@@ -213,6 +213,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1593183061}
   - component: {fileID: 1593183062}
+  - component: {fileID: 1593183063}
   m_Layer: 0
   m_Name: FighterJetService
   m_TagString: Untagged
@@ -247,6 +248,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fighterJetData: {fileID: 11400000, guid: ff783f2b3333f5c42bf2feb38bf77214, type: 2}
+--- !u!114 &1593183063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593183060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 016034108da2069499ac5bc3af7afa4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1753231392
 GameObject:
   m_ObjectHideFlags: 0

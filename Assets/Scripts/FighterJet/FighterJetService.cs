@@ -4,22 +4,26 @@ using UnityEngine;
 
 namespace SkyForce.FighterJet
 {
+    [RequireComponent(typeof(PlayerInputHandler))]
     public class FighterJetService : GenericMonoSingleton<FighterJetService>
     {
         [SerializeField]
         private PlayerJetScriptableObject fighterJetData;
         private FighterJetController fighterJet;
+
         void Start()
         {
             fighterJet = new FighterJetController(fighterJetData);
         }
 
-        void Update()
+        public void SetFighterJetTo(Vector3 position)
         {
-            if (Input.GetMouseButtonDown(0))
-            {
-                fighterJet.SetPositionTo(Camera.main.ScreenToWorldPoint(Input.mousePosition).SetZ(0));
-            }
+            fighterJet.SetPositionTo(position);
+        }
+
+        public Vector3 GetFighterJetPosition()
+        {
+            return fighterJet.GetPosition();
         }
     }
 }

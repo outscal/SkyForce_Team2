@@ -8,7 +8,21 @@ namespace  SkyForce.Bullet
     {
         void Start()
         {
-            GetComponent<Rigidbody2D>().AddForce(transform.up*1000);
+            
+        }
+
+        public void ResetPositionTo(Vector3 newPosition)
+        {
+            gameObject.transform.position = newPosition;
+        }
+
+        public void SetViewStateEnabled(bool viewStateEnabled)
+        {
+            gameObject.SetActive(viewStateEnabled);
+            if (viewStateEnabled)
+            {
+                GetComponent<Rigidbody2D>().AddForce(transform.up*1000);
+            }
         }
     }
 }

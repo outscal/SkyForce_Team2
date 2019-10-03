@@ -8,6 +8,6 @@ namespace SkyForce.FighterJet
     public class PlayerJetScriptableObject : ScriptableObject
     {
         public FighterJetView JetPrefab;
-        public float FiringDelay;
+        public float ReloadTime;
     }
 }
