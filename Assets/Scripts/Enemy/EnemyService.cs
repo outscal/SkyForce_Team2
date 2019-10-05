@@ -24,7 +24,7 @@ public class EnemyService : MonoSingletonGeneric<EnemyService>
     public EnemyController SpwanEnemy(int type)
     {
         int index = type;   
-        EnemyScriptableObject enemyScriptableObject = enemyTypes[index];
+        EnemyScriptableObject enemyScriptableObject = enemyTypes[index]; 
         EnemyModel EnemyModel = new EnemyModel(enemyScriptableObject);
         // EnemyModel EnemyModel = new EnemyModel(0.1f,100.0f,4);
         enemyController = new EnemyController(EnemyModel, enemyPrefab);

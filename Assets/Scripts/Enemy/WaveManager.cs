@@ -12,7 +12,7 @@ public class WaveManager : MonoBehaviour
         EnemyWaveScriptableObject wave = EnemyWave[0];
 
         // Debug.Log((int)wave.EnemyType);
-        SpawnWave(wave.EnemyWaveSize, (int)wave.EnemyWaveSize);
+        SpawnWave(wave.EnemyWaveSize, (int)wave.EnemyType);
     }
 
     // Update is called once per frame
