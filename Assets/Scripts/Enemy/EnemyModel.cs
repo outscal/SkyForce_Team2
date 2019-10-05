@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class EnemyModel
 {
+    public EnemyModel(EnemyScriptableObject enemyScriptablableObject)
+    {
+        EnemyType = enemyScriptablableObject.EnemyType;
+        Speed = enemyScriptablableObject.Speed;
+        Health = enemyScriptablableObject.Health;
+    }
+
     public EnemyModel(float speed, float health, int spawnspot)
 	{
         Speed = speed;
@@ -15,6 +22,7 @@ public class EnemyModel
 
     public float Speed { get; }
     public float Health { get; set;}
+    public EnemyTypeEnum EnemyType { get; }
     public int Spawnspot { get; }
     public int PlayerId { get; }
 }

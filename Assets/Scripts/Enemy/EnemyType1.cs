@@ -2,17 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyType1 : MonoBehaviour
+public class EnemyType1 : EnemyController
 {
-    // Start is called before the first frame update
-    void Start()
+    public EnemyType1(EnemyModel model,EnemyView prefab) : base(model,prefab)
     {
-        
+        enemyModel = model;
+        enemyView = GameObject.Instantiate<EnemyView>(prefab);
+        enemyView.Init(this);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+    public EnemyModel enemyModel { get; }
+	public EnemyView enemyView { get; }
 }

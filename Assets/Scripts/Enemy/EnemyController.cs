@@ -11,6 +11,7 @@ public class EnemyController
         enemyModel = model;
         enemyView = GameObject.Instantiate<EnemyView>(prefab);
         enemyView.Init(this);
+        // Debug.Log(" type -" + model.EnemyType);
     }
 
     public EnemyModel enemyModel { get; }

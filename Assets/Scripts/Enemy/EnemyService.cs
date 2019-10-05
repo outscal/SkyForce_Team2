@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyService : MonoBehaviour
+public class EnemyService : MonoSingletonGeneric<EnemyService>
 {
-    public EnemyType1 type1Obj;
+    private EnemyType1 type1Obj;
 
-    public EnemyController enemyController;
-    // Start is called before the first frame update
+    private EnemyController enemyController;
+    public EnemyView enemyPrefab;
+
+    public EnemyScriptableObject[] enemyTypes;
     void Start()
     {
-        SpwanEnemy();
+        // SpwanEnemy();
     }
 
     // Update is called once per frame
@@ -19,9 +21,12 @@ public class EnemyService : MonoBehaviour
         
     }
 
-    private EnemyController SpwanEnemy()
+    public EnemyController SpwanEnemy(int type)
     {
-        EnemyModel EnemyModel = new EnemyModel(0.1,100f,4);
+        int index = type;   
+        EnemyScriptableObject enemyScriptableObject = enemyTypes[index];
+        EnemyModel EnemyModel = new EnemyModel(enemyScriptableObject);
+        // EnemyModel EnemyModel = new EnemyModel(0.1f,100.0f,4);
         enemyController = new EnemyController(EnemyModel, enemyPrefab);
         
         return enemyController;
