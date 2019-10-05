@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using SkyForce.Bullet;
 
-namespace SkyForce.FighterJet
+namespace SkyForce.Player
 {
-    public class FighterJetController
+    public class PlayerController
     {
-        private FighterJetModel model;
-        private FighterJetView view;
+        private PlayerModel model;
+        private PlayerView view;
         private bool isLoaded;
-        public FighterJetController(PlayerJetScriptableObject fighterJetProperties)
+        public PlayerController(PlayerScriptableObject fighterJetProperties)
         {
-            model = new FighterJetModel(fighterJetProperties);
-            view = GameObject.Instantiate<FighterJetView>(model.JetPrefab, new Vector2(0,0), Quaternion.identity);
+            model = new PlayerModel(fighterJetProperties);
+            view = GameObject.Instantiate<PlayerView>(model.JetPrefab, new Vector2(0,0), Quaternion.identity);
             view.SetController(this);
             isLoaded = true;
         }

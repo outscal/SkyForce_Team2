@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SkyForce.FighterJet
+namespace SkyForce.Player
 {
-    public class FighterJetView : MonoBehaviour
+    public class PlayerView : MonoBehaviour
     {
-        private FighterJetController controller;
+        private PlayerController controller;
         public void SetPositionTo(Vector3 newPosition)
         {
             transform.position = newPosition;
@@ -17,7 +17,7 @@ namespace SkyForce.FighterJet
             return transform.position;
         }
 
-        public void SetController(FighterJetController _controller)
+        public void SetController(PlayerController _controller)
         {
             controller = _controller;
         }

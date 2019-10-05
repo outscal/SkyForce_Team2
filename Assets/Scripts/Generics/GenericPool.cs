@@ -2,45 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenericPool<T> : GenericSingleton<GenericPool<T>> where T : class
+namespace SkyForce.Generics
 {
-    private List<PooledItem<T>> poolList = new List<PooledItem<T>>();
-    public T GetItem()
+    public class GenericPool<T> : GenericSingleton<GenericPool<T>> where T : class
     {
-        if (poolList.Count > 0)
+        private List<PooledItem<T>> poolList = new List<PooledItem<T>>();
+        public T GetItem()
         {
-            PooledItem<T> item = poolList.Find(i => i.isUsed == false);
-            if (item != null)
+            if (poolList.Count > 0)
             {
-                item.isUsed = true;
-                return item.item;
+                PooledItem<T> item = poolList.Find(i => i.isUsed == false);
+                if (item != null)
+                {
+                    item.isUsed = true;
+                    return item.item;
+                }
+            }
+            
+            PooledItem<T> pooledItem = new PooledItem<T>();
+            pooledItem.isUsed = true;
+            pooledItem.item = CreatePooledItem();
+            poolList.Add(pooledItem);
+            return pooledItem.item;
+        }
+
+        public void ReturnItem(T item)
+        {
+            PooledItem<T> pooledItem = poolList.Find(i => i.item.Equals(item));
+            if (pooledItem != null)
+            {
+                pooledItem.isUsed = false;
             }
         }
-        
-        PooledItem<T> pooledItem = new PooledItem<T>();
-        pooledItem.isUsed = true;
-        pooledItem.item = CreatePooledItem();
-        poolList.Add(pooledItem);
-        return pooledItem.item;
-    }
 
-    public void ReturnItem(T item)
-    {
-        PooledItem<T> pooledItem = poolList.Find(i => i.item.Equals(item));
-        if (pooledItem != null)
+        public virtual T CreatePooledItem()
         {
-            pooledItem.isUsed = false;
+            return (T) null;
         }
     }
 
-    public virtual T CreatePooledItem()
+    public class PooledItem<T>
     {
-        return (T) null;
+        public bool isUsed;
+        public T item; 
     }
-}
-
-public class PooledItem<T>
-{
-    public bool isUsed;
-    public T item; 
 }

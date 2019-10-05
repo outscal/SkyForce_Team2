@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 1593183063}
   - component: {fileID: 1593183062}
   m_Layer: 0
-  m_Name: FighterJetService
+  m_Name: PlayerService
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

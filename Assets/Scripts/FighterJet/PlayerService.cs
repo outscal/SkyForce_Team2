@@ -1,19 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SkyForce.Generics;
 
-namespace SkyForce.FighterJet
+namespace SkyForce.Player
 {
     [RequireComponent(typeof(PlayerInputHandler))]
-    public class FighterJetService : GenericMonoSingleton<FighterJetService>
+    public class PlayerService : GenericMonoSingleton<PlayerService>
     {
         [SerializeField]
-        private PlayerJetScriptableObject fighterJetData;
-        private FighterJetController fighterJet;
+        private PlayerScriptableObject fighterJetData;
+        private PlayerController fighterJet;
 
         void Start()
         {
-            fighterJet = new FighterJetController(fighterJetData);
+            fighterJet = new PlayerController(fighterJetData);
         }
 
         public void SetFighterJetTo(Vector3 position)

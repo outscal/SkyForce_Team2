@@ -2,20 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GenericSingleton<T> where T : GenericSingleton<T>, new()
+namespace SkyForce.Generics
 {
-    private static T instance = null;
-    public static T Instance{
-        get{
-            if (instance == null)
-            {
-                instance = new T();
-            }
-            return instance;
-        }
-    }
-    protected GenericSingleton()
+    public class GenericSingleton<T> where T : GenericSingleton<T>, new()
     {
-        
+        private static T instance = null;
+        public static T Instance{
+            get{
+                if (instance == null)
+                {
+                    instance = new T();
+                }
+                return instance;
+            }
+        }
+        protected GenericSingleton()
+        {
+            
+        }
     }
 }

@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-namespace SkyForce.FighterJet
+
+namespace SkyForce.Player
 {
     public class PlayerInputHandler : MonoBehaviour
     {
@@ -11,7 +12,7 @@ namespace SkyForce.FighterJet
             if (Input.GetMouseButton(0))
             {
                     Vector3 position = Camera.main.ScreenToWorldPoint(Input.mousePosition).SetZ(0);
-                    FighterJetService.Instance.SetFighterJetTo(position);
+                    PlayerService.Instance.SetFighterJetTo(position);
             }
             #elif UNITY_ANDROID
             Debug.LogError("Need to implement Android Input");

@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SkyForce.FighterJet
+namespace SkyForce.Player
 {
-    public class FighterJetModel
+    public class PlayerModel
     {
-        private FighterJetView jetPrefab;
-        public FighterJetView JetPrefab{get {return jetPrefab; }}
+        private PlayerView jetPrefab;
+        public PlayerView JetPrefab{get {return jetPrefab; }}
         private float reloadTime;
         public float ReloadTime{ get{ return reloadTime; }}
-        public FighterJetModel(PlayerJetScriptableObject jetProperties)
+        public PlayerModel(PlayerScriptableObject jetProperties)
         {
             jetPrefab = jetProperties.JetPrefab;
             reloadTime = jetProperties.ReloadTime;

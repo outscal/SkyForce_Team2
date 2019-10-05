@@ -6,9 +6,10 @@ namespace  SkyForce.Bullet
 {
     public class BulletView : MonoBehaviour
     {
-        void Start()
+        Rigidbody2D rigidBody;
+        void Awake()
         {
-            
+            rigidBody = GetComponent<Rigidbody2D>();
         }
 
         public void ResetPositionTo(Vector3 newPosition)
@@ -21,7 +22,7 @@ namespace  SkyForce.Bullet
             gameObject.SetActive(viewStateEnabled);
             if (viewStateEnabled)
             {
-                GetComponent<Rigidbody2D>().AddForce(transform.up*1000);
+                rigidBody.AddForce(transform.up*1000);
             }
         }
     }
