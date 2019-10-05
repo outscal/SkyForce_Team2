@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c4e33c420e02724d89d4aa871453a77, type: 3}
-  m_Name: PlayerJet1
+  m_Script: {fileID: 11500000, guid: ca676017bf5761644bb02f741f5f9698, type: 3}
+  m_Name: PlayerJet2
   m_EditorClassIdentifier: 
-  JetPrefab: {fileID: 2007429483128918570, guid: 69c312d07776b70429802bc0aed9b989,
+  JetPrefab: {fileID: 229889170602614037, guid: a23da55ced636e34b9d204684c37135a,
     type: 3}
   ReloadTime: 0.2

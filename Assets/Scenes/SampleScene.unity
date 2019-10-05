@@ -212,8 +212,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1593183061}
-  - component: {fileID: 1593183062}
   - component: {fileID: 1593183063}
+  - component: {fileID: 1593183062}
   m_Layer: 0
   m_Name: FighterJetService
   m_TagString: Untagged
@@ -244,10 +244,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1593183060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4116c174b07900b4bbb0e3e6b79e2af7, type: 3}
+  m_Script: {fileID: 11500000, guid: 4dc4f94259438344a8706e0ea3ff72a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fighterJetData: {fileID: 11400000, guid: ff783f2b3333f5c42bf2feb38bf77214, type: 2}
+  fighterJetData: {fileID: 11400000, guid: 81d891a7b29f67e4094972de52b7d5da, type: 2}
 --- !u!114 &1593183063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +257,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1593183060}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 016034108da2069499ac5bc3af7afa4b, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c24e37a18fd4074f90a53b14ebaa2cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1753231392
@@ -300,8 +300,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1753231392}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b48d1fc5ef7dd64fa9ef4ea4fd68096, type: 3}
+  m_Script: {fileID: 11500000, guid: 012afd39fd8156742864bb347e9a16ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jetBulletScriptableObject: {fileID: 11400000, guid: 2b348a0bb1351404ea218b79ae632c22,
+  jetBulletScriptableObject: {fileID: 11400000, guid: 158b1e19a04430f48b046db949227261,
     type: 2}
