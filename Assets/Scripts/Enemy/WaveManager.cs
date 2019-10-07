@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    public Transform playerObj;
+    public Transform camera;
     public EnemyWaveScriptableObject[] EnemyWave;
     // Start is called before the first frame update
     void Start()
@@ -12,7 +12,9 @@ public class WaveManager : MonoBehaviour
         EnemyWaveScriptableObject wave = EnemyWave[0];
 
         // Debug.Log((int)wave.EnemyType);
+         
         SpawnWave(wave.EnemyWaveSize, (int)wave.EnemyType);
+        // playerObj = gameObject.transform.GetComponent<PlayerView>();
     }
 
     // Update is called once per frame
@@ -31,12 +33,12 @@ public class WaveManager : MonoBehaviour
         }
     } 
 
-    public Vector2 GetJetPos()
-    {
-        Vector2 pos;
-        pos.x = playerObj.position.x;
-        pos.y = playerObj.position.y;
-        Debug.Log(pos);
-        return pos;
-    } 
+    // public Vector2 GetJetPos()
+    // {
+    //     Vector2 pos;
+    //     pos.x = playerObj.position.x;
+    //     pos.y = playerObj.position.y;
+    //     Debug.Log(pos);
+    //     return pos;
+    // } 
 }

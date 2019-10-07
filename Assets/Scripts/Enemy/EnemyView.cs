@@ -9,6 +9,10 @@ public class EnemyView : MonoBehaviour
     // Start is called before the first frame update
 
     // Update is called once per frame
+    private void Start()
+    {
+        transform.Rotate(0,0, 180.0f);
+    }
     void Update()
     {
         transform.position += Vector3.forward * -Time.deltaTime;

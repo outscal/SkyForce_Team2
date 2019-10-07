@@ -13,7 +13,6 @@ public class MonoSingletonGeneric<T> : MonoBehaviour where T: MonoSingletonGener
         if (instance == null)
         {
             instance = (T)this;
-            print("singleton created");
         }
         else
         {

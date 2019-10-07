@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyService : MonoSingletonGeneric<EnemyService>
 {
-    private EnemyType1 type1Obj;
+    // private EnemyType1 type1Obj;
 
     private EnemyController enemyController;
     public EnemyView enemyPrefab;
