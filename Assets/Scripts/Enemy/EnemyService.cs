@@ -21,13 +21,13 @@ public class EnemyService : MonoSingletonGeneric<EnemyService>
         
     }
 
-    public EnemyController SpwanEnemy(int type)
+    public EnemyController SpwanEnemy(int type, Vector2 position)
     {
         int index = type;   
         EnemyScriptableObject enemyScriptableObject = enemyTypes[index]; 
         EnemyModel EnemyModel = new EnemyModel(enemyScriptableObject);
         // EnemyModel EnemyModel = new EnemyModel(0.1f,100.0f,4);
-        enemyController = new EnemyController(EnemyModel, enemyPrefab);
+        enemyController = new EnemyController(EnemyModel, enemyPrefab, position);
         
         return enemyController;
     }
