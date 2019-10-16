@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName="ScriptableObjects/EnemyWaveScriptableObject")]
-public class EnemyWaveScriptableObject : ScriptableObject
+namespace  SkyForce.Enemy
 {
-    public EnemyTypeEnum EnemyType;
-    public int EnemyWaveSize; 
+    [CreateAssetMenu(menuName="ScriptableObjects/EnemyWaveScriptableObject")]
+    public class EnemyWaveScriptableObject : ScriptableObject
+    {
+        public EnemyTypeEnum EnemyType;
+        public int EnemyWaveSize; 
+    }
 }

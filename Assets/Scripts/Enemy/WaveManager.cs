@@ -3,70 +3,73 @@ using System.Collections.Generic;
 using UnityEngine;
 using SkyForce.Generics;
 
-public class WaveManager : GenericMonoSingleton<WaveManager>
+namespace SkyForce.Enemy
 {
-    public Transform cameraPos;
-    public EnemyWaveScriptableObject[] EnemyWave;
-    
-    public float startWait = 3.0f;
-    public float waveWait = 6.0f;
-
-    // Start is called before the first frame update
-    private enum SpawnSide
+    public class WaveManager : GenericMonoSingleton<WaveManager>
     {
-        Up = 0,
-        Left = 1,
-        Right = 2,
-    }
-    void Start()
-    {
-        EnemyWaveScriptableObject wave = EnemyWave[0];
-
-        // Debug.Log((int)wave.EnemyType);
-        SpawnSide side; 
-        float _index = Random.Range(0, 2.0f);
-        int index = (int)_index;
-        Debug.Log(index);
-        side = (SpawnSide)index;
-        Debug.Log(side);
-        StartCoroutine (SpawnWave(wave.EnemyWaveSize, (int)wave.EnemyType,side));
-        // playerObj = gameObject.transform.GetComponent<PlayerView>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        // GetJetPos();
+        public Transform cameraPos;
+        public EnemyWaveScriptableObject[] EnemyWave;
         
-    }
+        public float startWait = 3.0f;
+        public float waveWait = 6.0f;
 
-    IEnumerator SpawnWave(int size,int type,SpawnSide side)
-    {
-        yield return new WaitForSeconds(startWait);
-        while (true)
+        // Start is called before the first frame update
+        private enum SpawnSide
         {
-            Vector2 position = GetCameraPos();
-
-            for (int i = 0; i < size; i++)
-            {
-                EnemyService.Instance.SpwanEnemy(type, position);
-
-                
-                    position.y += 2.0f;
-                // Debug.Log("Enemy no "+i);
-
-            }
-            yield return new WaitForSeconds(waveWait);
+            Up = 0,
+            Left = 1,
+            Right = 2,
         }
-        
-    } 
+        void Start()
+        {
+            EnemyWaveScriptableObject wave = EnemyWave[0];
 
-    public Vector2 GetCameraPos()
-    {
-        Vector2 pos;
-        pos.x = cameraPos.position.x;
-        pos.y = cameraPos.position.y + 5.0f;
-        Debug.Log(pos);
-        return pos;
-    } 
+            // Debug.Log((int)wave.EnemyType);
+            SpawnSide side; 
+            float _index = Random.Range(0, 2.0f);
+            int index = (int)_index;
+            Debug.Log(index);
+            side = (SpawnSide)index;
+            Debug.Log(side);
+            StartCoroutine (SpawnWave(wave.EnemyWaveSize, (int)wave.EnemyType,side));
+            // playerObj = gameObject.transform.GetComponent<PlayerView>();
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            // GetJetPos();
+            
+        }
+
+        IEnumerator SpawnWave(int size,int type,SpawnSide side)
+        {
+            yield return new WaitForSeconds(startWait);
+            while (true)
+            {
+                Vector2 position = GetCameraPos();
+
+                for (int i = 0; i < size; i++)
+                {
+                    EnemyService.Instance.SpwanEnemy(type, position);
+
+                    
+                        position.y += 2.0f;
+                    // Debug.Log("Enemy no "+i);
+
+                }
+                yield return new WaitForSeconds(waveWait);
+            }
+            
+        } 
+
+        public Vector2 GetCameraPos()
+        {
+            Vector2 pos;
+            pos.x = cameraPos.position.x;
+            pos.y = cameraPos.position.y + 5.0f;
+            Debug.Log(pos);
+            return pos;
+        } 
+    }
 }

@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyController
+namespace SkyForce.Enemy
 {
-    protected Transform playerObj;
-
-    public EnemyController(EnemyModel model,EnemyView prefab,Vector2 position)
+    public class EnemyController
     {
-        enemyModel = model;
-        
-        enemyView = GameObject.Instantiate<EnemyView>(prefab,new Vector3(position.x, position.y, 0),Quaternion.identity);
-        enemyView.Init(this);
-        // Debug.Log(" type -" + model.EnemyType);
-    }
+        protected Transform playerObj;
 
-    public EnemyModel enemyModel { get; }
-	public EnemyView enemyView { get; }
+        public EnemyController(EnemyModel model,EnemyView prefab,Vector2 position)
+        {
+            enemyModel = model;
+            
+            enemyView = GameObject.Instantiate<EnemyView>(prefab,new Vector3(position.x, position.y, 0),Quaternion.identity);
+            enemyView.Init(this);
+            // Debug.Log(" type -" + model.EnemyType);
+        }
+
+        public EnemyModel enemyModel { get; }
+        public EnemyView enemyView { get; }
+    }
 }

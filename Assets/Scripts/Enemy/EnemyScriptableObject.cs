@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "EnemyScriptableObject", menuName = "ScriptableObjects/NewEnemyScriptableObject")]
-public class EnemyScriptableObject : ScriptableObject
+namespace SkyForce.Enemy
 {
-    public EnemyTypeEnum EnemyType;
-    public float Health;
-    public float Speed;
+    [CreateAssetMenu(fileName = "EnemyScriptableObject", menuName = "ScriptableObjects/NewEnemyScriptableObject")]
+    public class EnemyScriptableObject : ScriptableObject
+    {
+        public EnemyTypeEnum EnemyType;
+        public float Health;
+        public float Speed;
+    }
 }
