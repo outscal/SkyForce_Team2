@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyService : MonoSingletonGeneric<EnemyService>
+public class EnemyService : GenericMonoSingleton<EnemyService>
 {
     // private EnemyType1 type1Obj;
 
