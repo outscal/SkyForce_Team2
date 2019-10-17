@@ -9,9 +9,9 @@ namespace SkyForce.Enemy
     {
         public Transform cameraPos;
         public EnemyWaveScriptableObject[] EnemyWave;
-        
-        public float startWait = 3.0f;
-        public float waveWait = 6.0f;
+        private Coroutine waveRoutine;
+        private float startWait;
+        private float waveWait;
 
         // Start is called before the first frame update
         private enum SpawnSide
@@ -24,6 +24,8 @@ namespace SkyForce.Enemy
         {
             EnemyWaveScriptableObject wave = EnemyWave[0];
 
+            startWait = 3.0f;
+            waveWait = 15.0f;
             // Debug.Log((int)wave.EnemyType);
             SpawnSide side; 
             float _index = Random.Range(0, 2.0f);
@@ -31,7 +33,7 @@ namespace SkyForce.Enemy
             Debug.Log(index);
             side = (SpawnSide)index;
             Debug.Log(side);
-            StartCoroutine (SpawnWave(wave.EnemyWaveSize, (int)wave.EnemyType,side));
+            waveRoutine = StartCoroutine (SpawnWave(wave.EnemyWaveSize, (int)wave.EnemyType,side));
             // playerObj = gameObject.transform.GetComponent<PlayerView>();
         }
 
@@ -56,7 +58,7 @@ namespace SkyForce.Enemy
                     
                         position.y += 2.0f;
                     // Debug.Log("Enemy no "+i);
-
+                    yield return new WaitForSeconds(1.0f);
                 }
                 yield return new WaitForSeconds(waveWait);
             }
