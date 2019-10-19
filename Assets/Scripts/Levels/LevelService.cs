@@ -7,14 +7,11 @@ namespace SkyForce.Level
 {
     public class LevelService : GenericMonoSingleton<LevelService>
     {
+        [SerializeField]
+        private LevelView[] levelPrefab;
         void Start()
         {
-            
-        }
-
-        void Update()
-        {
-            
+            new LevelController(levelPrefab[0]);
         }
     }
 }

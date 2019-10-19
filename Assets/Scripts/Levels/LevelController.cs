@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelController : MonoBehaviour
+namespace SkyForce.Level
 {
-    // Start is called before the first frame update
-    void Start()
+    public class LevelController
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public LevelController(LevelView levelPrefab)
+        {
+            GameObject.Instantiate(levelPrefab);
+        }
     }
 }
