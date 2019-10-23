@@ -12,6 +12,7 @@ namespace SkyForce.Enemy
         private Coroutine waveRoutine;
         private float startWait;
         private float waveWait;
+        private float spawnWait;
 
         // Start is called before the first frame update
         private enum SpawnSide
@@ -25,6 +26,7 @@ namespace SkyForce.Enemy
             EnemyWaveScriptableObject wave = EnemyWave[0];
 
             startWait = 3.0f;
+            spawnWait = 1.0f;
             waveWait = 15.0f;
             // Debug.Log((int)wave.EnemyType);
             SpawnSide side; 
@@ -58,7 +60,7 @@ namespace SkyForce.Enemy
                     
                         position.y += 2.0f;
                     // Debug.Log("Enemy no "+i);
-                    yield return new WaitForSeconds(1.0f);
+                    yield return new WaitForSeconds(spawnWait);
                 }
                 yield return new WaitForSeconds(waveWait);
             }
