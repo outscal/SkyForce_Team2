@@ -26,5 +26,10 @@ namespace SkyForce.Player
         {
             return fighterJet.GetPosition();
         }
+
+        public float GetPlayerHealth()
+        {
+            return fighterJet.GetHealth();
+        }
     }
 }

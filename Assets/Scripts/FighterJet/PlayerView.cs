@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace SkyForce.Player
 {
-    public class PlayerView : MonoBehaviour
+    public class PlayerView : MonoBehaviour, IDamageable
     {
         private PlayerController controller;
         public void SetPositionTo(Vector3 newPosition)
@@ -30,6 +30,20 @@ namespace SkyForce.Player
             }
 
             controller.CheckAndFire();
+        }
+
+        public bool TakeDamage(float destruction)
+        {
+            if(controller != null)
+            {
+                controller.TakeDamage(destruction);
+            }
+            return false;
+        }
+
+        public void DestroyView()
+        {
+            Destroy(gameObject);
         }
     }
 }
