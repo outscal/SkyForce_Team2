@@ -19,13 +19,24 @@ namespace SkyForce.Enemy
         }
         protected void Update()
         {
-            Debug.Log("View Update");
-            transform.position += Vector3.forward * -Time.deltaTime;
+            // transform.position += Vector3.forward * -Time.deltaTime;
+
+            if (enemyController == null)
+            {
+                return;
+            }
+
+            enemyController.CheckAndFire();
         }
         public void Init(EnemyController c)
         {
             Debug.Log("View INit");
             this.enemyController = c;
+        }
+
+        public Vector3 GetPosition()
+        {
+            return transform.position;
         }
     }
 }

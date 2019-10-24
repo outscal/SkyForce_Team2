@@ -14,9 +14,10 @@ namespace  SkyForce.Bullet
             parentPool = _parentPool;
         }
 
-        public void Initialise(Vector3 position)
+        public void Initialise(Vector3 position, Vector3 direction)
         {
             view.ResetPositionTo(position);
+            view.ResetDirectionTo(direction);
             view.SetViewStateEnabled(true);
             InitiateBurnoutTimer();
         }

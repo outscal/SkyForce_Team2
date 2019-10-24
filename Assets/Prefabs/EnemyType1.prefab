@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 6991610766799822596}
   - component: {fileID: 4643915556570757715}
   - component: {fileID: 4942508732513335400}
-  - component: {fileID: -7122718976544618159}
   m_Layer: 0
-  m_Name: EnemyTypeA
+  m_Name: EnemyType1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 60870928753173334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 4, z: 0}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -92,17 +91,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62751a6fcdaa66f4ab359c396fa7f40d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-7122718976544618159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 60870928753173334}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93cb45d44c16f45a4bbd5099fe096c20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

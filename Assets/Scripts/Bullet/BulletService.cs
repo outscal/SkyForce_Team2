@@ -15,9 +15,9 @@ namespace SkyForce.Bullet
             playerBulletPool = new BulletPool();
         }
 
-        public BulletController GetBullet(Vector3 position)
+        public BulletController GetBullet(Vector3 position, Vector3 direction)
         {
-            return playerBulletPool.GetBulletFromPool(jetBulletScriptableObject, position);
+            return playerBulletPool.GetBulletFromPool(jetBulletScriptableObject, position, direction);
         }
 
     }

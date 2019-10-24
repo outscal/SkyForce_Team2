@@ -9,12 +9,12 @@ namespace SkyForce.Bullet
     {
         private BulletScriptableObject bulletProperties;
         private Vector3 position;
-        public BulletController GetBulletFromPool(BulletScriptableObject _bulletProperties, Vector3 _position)
+        public BulletController GetBulletFromPool(BulletScriptableObject _bulletProperties, Vector3 _position, Vector3 _direction)
         {
             bulletProperties = _bulletProperties;
             position = _position;
             BulletController bullet = GetItem();
-            bullet.Initialise(_position);
+            bullet.Initialise(_position, _direction);
             return bullet;
         }
         public override BulletController CreatePooledItem()

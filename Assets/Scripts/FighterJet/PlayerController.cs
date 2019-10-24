@@ -35,7 +35,7 @@ namespace SkyForce.Player
         {
             if(isLoaded == true)
             {
-                BulletService.Instance.GetBullet(view.GetPosition());
+                BulletService.Instance.GetBullet(view.GetPosition(), Vector3.up);
                 isLoaded = false;
                 Reload();
             }

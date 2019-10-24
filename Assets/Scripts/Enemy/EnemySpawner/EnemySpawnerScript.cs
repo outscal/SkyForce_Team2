@@ -15,7 +15,7 @@ namespace SkyForce.Enemy
             {
                 Debug.Log("Collission detected....spawning enemy");
 
-                //EnemyService.Instance.SpwanEnemy()
+                EnemyService.Instance.SpwanEnemy(spawnerProperties.EnemyType, coll.gameObject.transform.position.AddY(5));
             }
         }
     }

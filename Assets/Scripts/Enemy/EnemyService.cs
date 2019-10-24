@@ -14,7 +14,7 @@ namespace SkyForce.Enemy
         public EnemyScriptableObject[] enemyTypes;
         void Start()
         {
-            
+            // SpwanEnemy(0, new Vector2(40, 50));
         }
 
         // Update is called once per frame
@@ -26,7 +26,7 @@ namespace SkyForce.Enemy
         public EnemyController SpwanEnemy(EnemyTypeEnum type, Vector2 position)
         {
             int index = (int)type;
-            EnemyScriptableObject enemyScriptableObject = enemyTypes[index]; 
+            EnemyScriptableObject enemyScriptableObject = enemyTypes[0]; 
             EnemyModel EnemyModel = new EnemyModel(enemyScriptableObject);
             EnemyView EnemyView = enemyScriptableObject.EnemyView;   
             enemyController = new EnemyController(EnemyModel, EnemyView, position);

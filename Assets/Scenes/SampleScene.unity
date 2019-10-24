@@ -287,10 +287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ef82a51bb2e0745ac3749c2e7186d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 4942508732513335400, guid: 5b7950c2e8fc602419920a2fe341d51b,
-    type: 3}
   enemyTypes:
   - {fileID: 11400000, guid: e1f296b48691b2844a502904de87d33a, type: 2}
+  - {fileID: 11400000, guid: befc7c59608dccf4b92fe8b26cd8a4b0, type: 2}
 --- !u!4 &233401799
 Transform:
   m_ObjectHideFlags: 0
@@ -410,7 +409,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8555a34c842eef47b6f6c0efdf02287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMoving: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
