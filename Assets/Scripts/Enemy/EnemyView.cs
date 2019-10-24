@@ -11,16 +11,20 @@ namespace SkyForce.Enemy
         // Start is called before the first frame update
 
         // Update is called once per frame
-        private void Start()
+        protected void Start()
         {
+            Debug.Log("View Start");
             transform.Rotate(0,0, 180.0f);
+            Destroy(gameObject,20.0f);
         }
-        void Update()
+        protected void Update()
         {
+            Debug.Log("View Update");
             transform.position += Vector3.forward * -Time.deltaTime;
         }
         public void Init(EnemyController c)
         {
+            Debug.Log("View INit");
             this.enemyController = c;
         }
     }

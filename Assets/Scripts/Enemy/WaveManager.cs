@@ -30,12 +30,11 @@ namespace SkyForce.Enemy
             waveWait = 15.0f;
             // Debug.Log((int)wave.EnemyType);
             SpawnSide side; 
-            float _index = Random.Range(0, 2.0f);
-            int index = (int)_index;
+            int index = (int)Random.Range(1.0f, 2.0f);
             Debug.Log(index);
             side = (SpawnSide)index;
             Debug.Log(side);
-            waveRoutine = StartCoroutine (SpawnWave(wave.EnemyWaveSize, (int)wave.EnemyType,side));
+            waveRoutine = StartCoroutine (SpawnWave(wave.EnemyWaveSize, wave.EnemyType,side));
             // playerObj = gameObject.transform.GetComponent<PlayerView>();
         }
 
@@ -46,14 +45,14 @@ namespace SkyForce.Enemy
             
         }
 
-        IEnumerator SpawnWave(int size,int type,SpawnSide side)
+        IEnumerator SpawnWave(int size,EnemyTypeEnum type,SpawnSide side)
         {
             yield return new WaitForSeconds(startWait);
             while (true)
             {
                 Vector2 position = GetCameraPos();
 
-                for (int i = 0; i < size; i++)
+                for (int i = 1; i <= size; i++)
                 {
                     EnemyService.Instance.SpwanEnemy(type, position);
 
@@ -72,7 +71,6 @@ namespace SkyForce.Enemy
             Vector2 pos;
             pos.x = cameraPos.position.x;
             pos.y = cameraPos.position.y + 5.0f;
-            Debug.Log(pos);
             return pos;
         } 
     }

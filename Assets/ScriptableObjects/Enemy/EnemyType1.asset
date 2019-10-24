@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: EnemyType1
   m_EditorClassIdentifier: 
   EnemyType: 0
+  EnemyView: {fileID: 4942508732513335400, guid: 5b7950c2e8fc602419920a2fe341d51b,
+    type: 3}
   Health: 25
   Speed: 10

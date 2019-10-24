@@ -8,6 +8,7 @@ namespace SkyForce.Enemy
     public class EnemyScriptableObject : ScriptableObject
     {
         public EnemyTypeEnum EnemyType;
+        public EnemyView EnemyView;
         public float Health;
         public float Speed;
     }
