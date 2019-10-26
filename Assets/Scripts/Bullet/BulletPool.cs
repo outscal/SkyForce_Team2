@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SkyForce.Generics;
+using SkyForce.Game;
 
 namespace SkyForce.Bullet
 {
@@ -9,12 +10,13 @@ namespace SkyForce.Bullet
     {
         private BulletScriptableObject bulletProperties;
         private Vector3 position;
-        public BulletController GetBulletFromPool(BulletScriptableObject _bulletProperties, Vector3 _position, Vector3 _direction)
+        
+        public BulletController GetBulletFromPool(BulletScriptableObject _bulletProperties, Vector3 _position, Vector3 _direction, GameLayer _source)
         {
             bulletProperties = _bulletProperties;
             position = _position;
             BulletController bullet = GetItem();
-            bullet.Initialise(_position, _direction);
+            bullet.Initialise(_position, _direction, _source);
             return bullet;
         }
         public override BulletController CreatePooledItem()

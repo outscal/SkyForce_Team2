@@ -6,16 +6,30 @@ namespace  SkyForce.Bullet
 {
     public class BulletView : MonoBehaviour
     {
-        Rigidbody2D rigidBody;
         private Vector3 direction;
+        private BulletController controller;
+        private bool isViewEnabled;
         void Awake()
         {
-            rigidBody = GetComponent<Rigidbody2D>();
+            isViewEnabled = false;
+        }
+
+        private void Update() 
+        {
+            if (isViewEnabled)
+            {
+                gameObject.transform.position += direction; 
+            }
         }
 
         public void ResetPositionTo(Vector3 newPosition)
         {
             gameObject.transform.position = newPosition;
+        }
+
+        public void SetController(BulletController _controller)
+        {
+            controller = _controller;
         }
 
         public void ResetDirectionTo(Vector3 newDirection)
@@ -25,10 +39,15 @@ namespace  SkyForce.Bullet
 
         public void SetViewStateEnabled(bool viewStateEnabled)
         {
+            isViewEnabled = viewStateEnabled;
             gameObject.SetActive(viewStateEnabled);
-            if (viewStateEnabled)
+        }
+
+        void OnCollisionEnter2D(Collision2D coll)
+        {
+            if (controller != null)
             {
-                rigidBody.AddForce(direction*1000);
+                controller.HandleCollissionWith(coll);
             }
         }
     }

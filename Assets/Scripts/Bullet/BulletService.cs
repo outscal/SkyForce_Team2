@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SkyForce.Generics;
+using SkyForce.Game;
 
 namespace SkyForce.Bullet
 {
@@ -15,9 +16,9 @@ namespace SkyForce.Bullet
             playerBulletPool = new BulletPool();
         }
 
-        public BulletController GetBullet(Vector3 position, Vector3 direction)
+        public BulletController GetBullet(Vector3 position, Vector3 direction, GameLayer source)
         {
-            return playerBulletPool.GetBulletFromPool(jetBulletScriptableObject, position, direction);
+            return playerBulletPool.GetBulletFromPool(jetBulletScriptableObject, position, direction, source);
         }
 
     }

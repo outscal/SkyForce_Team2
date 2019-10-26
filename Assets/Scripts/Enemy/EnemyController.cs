@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SkyForce.Bullet;
+using SkyForce.Game;
 
 namespace SkyForce.Enemy
 {
     public class EnemyController
     {
+        private EnemyModel enemyModel;
+        private EnemyView enemyView;
         protected Transform playerObj;
         private bool isLoaded;
         public EnemyController(EnemyModel model,EnemyView prefab,Vector2 position)
@@ -23,7 +26,7 @@ namespace SkyForce.Enemy
         {
             if(isLoaded == true)
             {
-                BulletService.Instance.GetBullet(enemyView.GetPosition(), Vector3.down);
+                BulletService.Instance.GetBullet(enemyView.GetPosition(), Vector3.down, GameLayer.Enemy);
                 isLoaded = false;
                 Reload();
             }
@@ -36,7 +39,23 @@ namespace SkyForce.Enemy
             isLoaded = true;
         }
 
-        public EnemyModel enemyModel { get; }
-        public EnemyView enemyView { get; }
+        private void DestroyEnemy()
+        {
+            enemyModel = null;
+            enemyView.DestroyEnemyView();
+            enemyView = null;
+        }
+
+        public bool TakeDamage(float destruction)
+        {
+            enemyModel.Health -= destruction;
+            if (enemyModel.Health <= 0)
+            {
+                enemyModel.Health = 0;//avoiding negative values
+                DestroyEnemy();
+            }
+            // GameplayUIService.Instance.UpdateUIHealthBar();
+            return true;
+        }
     }
 }

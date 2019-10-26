@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace SkyForce.Enemy
 {
-    public class EnemyView : MonoBehaviour
+    public class EnemyView : MonoBehaviour, IDamageable
     {
 
         private EnemyController enemyController;
@@ -37,6 +37,20 @@ namespace SkyForce.Enemy
         public Vector3 GetPosition()
         {
             return transform.position;
+        }
+
+        public bool TakeDamage(float destruction)
+        {
+            if(enemyController != null)
+            {
+                enemyController.TakeDamage(destruction);
+            }
+            return false;
+        }
+
+        public void DestroyEnemyView()
+        {
+            Destroy(gameObject);
         }
     }
 }
