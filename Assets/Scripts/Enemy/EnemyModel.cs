@@ -11,15 +11,7 @@ namespace SkyForce.Enemy
             EnemyType = enemyScriptablableObject.EnemyType;
             Speed = enemyScriptablableObject.Speed;
             Health = enemyScriptablableObject.Health;
-        }
-
-        public EnemyModel(float speed, float health, int spawnspot)
-        {
-            Speed = speed;
-            Health = health;
-            Spawnspot = spawnspot;
-
-            PlayerId = Random.Range(1, 10000);
+            ReloadTime = enemyScriptablableObject.ReloadTime;
         }
 
         public float Speed { get; }
@@ -27,5 +19,6 @@ namespace SkyForce.Enemy
         public EnemyTypeEnum EnemyType { get; }
         public int Spawnspot { get; }
         public int PlayerId { get; }
+        public float ReloadTime{ get;}
     }
 }

@@ -18,6 +18,7 @@ namespace SkyForce.Enemy
         // Update is called once per frame
         void Update()
         {
+            base.Update();
             // MoveUp();
             MoveStrafe();
         }
@@ -27,8 +28,8 @@ namespace SkyForce.Enemy
             // iTween.MoveTo(this.gameObject, iTween.Hash("position", new Vector3(5, 5,0), "time", 1.5f, "easeType", iTween.EaseType.easeInOutSine));
 
             // iTween.MoveBy(gameObject, iTween.Hash("x", -5, "speed", 1.0f, "easeType", iTween.EaseType.easeInOutSine));
-            Vector2 pos = WaveManager.Instance.GetCameraPos();
-            pos.y -= 1.5f;
+            Vector3 pos = Camera.main.transform.position;
+            pos.AddY(5.0f);
             target.y = pos.y;
 
             transform.position = Vector3.MoveTowards(transform.position, target, 0.1f);

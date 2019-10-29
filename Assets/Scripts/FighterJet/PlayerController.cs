@@ -16,9 +16,10 @@ namespace SkyForce.Player
         {
             model = new PlayerModel(fighterJetProperties);
             view = GameObject.Instantiate<PlayerView>(model.JetPrefab, new Vector2(0,0), Quaternion.identity);
+            view.transform.parent = GameService.Instance.GetGameplayScene().transform;
             view.SetController(this);
             isLoaded = true;
-            GameplayUIService.Instance.UpdateUIHealthBar();
+            // GameplayUIService.Instance.UpdateUIHealthBar();
         }
 
         public void SetPositionTo(Vector3 newPosition)
@@ -56,7 +57,10 @@ namespace SkyForce.Player
                 DestroyPlayer();
                 GameService.Instance.GameOver();
             }
-            GameplayUIService.Instance.UpdateUIHealthBar();
+            else
+            {
+                GameplayUIService.Instance.UpdateUIHealthBar();
+            }
             return true;
         }
 

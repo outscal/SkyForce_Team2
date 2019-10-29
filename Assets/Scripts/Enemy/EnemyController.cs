@@ -17,8 +17,8 @@ namespace SkyForce.Enemy
             enemyModel = model;
             
             enemyView = GameObject.Instantiate<EnemyView>(prefab,new Vector3(position.x, position.y, 0),Quaternion.identity);
+            enemyView.transform.parent = GameService.Instance.GetGameplayScene().transform;
             enemyView.Init(this);
-            // Debug.Log(" type -" + model.EnemyType);
             isLoaded = true;
         }
 
@@ -34,8 +34,7 @@ namespace SkyForce.Enemy
 
         public async void Reload()
         {
-            //await new WaitForSeconds(enemyModel.ReloadTime);
-            await new WaitForSeconds(1);
+            await new WaitForSeconds(enemyModel.ReloadTime);
             isLoaded = true;
         }
 

@@ -26,7 +26,7 @@ namespace SkyForce.Enemy
         public EnemyController SpwanEnemy(EnemyTypeEnum type, Vector2 position)
         {
             int index = (int)type;
-            EnemyScriptableObject enemyScriptableObject = enemyTypes[0]; 
+            EnemyScriptableObject enemyScriptableObject = enemyTypes[index]; 
             EnemyModel EnemyModel = new EnemyModel(enemyScriptableObject);
             EnemyView EnemyView = enemyScriptableObject.EnemyView;   
             enemyController = new EnemyController(EnemyModel, EnemyView, position);

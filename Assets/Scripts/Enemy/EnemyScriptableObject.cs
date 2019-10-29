@@ -11,5 +11,6 @@ namespace SkyForce.Enemy
         public EnemyView EnemyView;
         public float Health;
         public float Speed;
+        public float ReloadTime;
     }
 }

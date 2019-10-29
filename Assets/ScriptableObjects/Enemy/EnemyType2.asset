@@ -17,3 +17,4 @@ MonoBehaviour:
     type: 3}
   Health: 500
   Speed: 8
+  ReloadTime: 0.5

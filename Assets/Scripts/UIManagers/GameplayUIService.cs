@@ -14,7 +14,7 @@ namespace SkyForce.UIManagers
 
         public void UpdateUIHealthBar()
         {
-            // HealthBar.value = PlayerService.Instance.GetPlayerHealth();
+            HealthBar.value = PlayerService.Instance.GetPlayerHealth();
         }
     }
 }

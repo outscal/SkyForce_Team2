@@ -15,7 +15,13 @@ namespace SkyForce.Player
                     PlayerService.Instance.SetFighterJetTo(position);
             }
             #elif UNITY_ANDROID
-            Debug.LogError("Need to implement Android Input");
+            if (Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+
+                Vector3 position = Camera.main.ScreenToWorldPoint(touch.position).SetZ(0);
+                PlayerService.Instance.SetFighterJetTo(position);
+            }
             
             #else
             Debug.LogError("Unknown platform detected");

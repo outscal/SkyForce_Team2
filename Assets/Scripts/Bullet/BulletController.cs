@@ -13,6 +13,7 @@ namespace  SkyForce.Bullet
         public BulletController(BulletScriptableObject _bulletProperties, BulletPool _parentPool)
         {
             view = GameObject.Instantiate<BulletView>(_bulletProperties.bulletPrefab, Vector3.zero, Quaternion.identity);
+            view.transform.parent = GameService.Instance.GetGameplayScene().transform;
             parentPool = _parentPool;
         }
 
@@ -34,7 +35,7 @@ namespace  SkyForce.Bullet
 
         }
 
-        public void HandleCollissionWith(Collision2D coll)
+        public void HandleCollissionWith(Collider2D coll)
         {
             if(coll.gameObject.layer == (int)GameLayer.Player && bulletSource != GameLayer.Player)
             {

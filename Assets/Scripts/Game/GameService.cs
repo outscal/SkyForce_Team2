@@ -25,5 +25,10 @@ namespace SkyForce.Game
         {
             gameController.ChangeGameState(gameOverState);
         }
+
+        public GameplayState GetGameplayScene()
+        {
+            return gameplayState;
+        }
     }
 }

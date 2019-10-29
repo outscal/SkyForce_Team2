@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SkyForce.Game;
 
 namespace SkyForce.Level
 {
@@ -8,7 +9,7 @@ namespace SkyForce.Level
     {
         public LevelController(LevelView levelPrefab)
         {
-            GameObject.Instantiate(levelPrefab);
+            GameObject.Instantiate(levelPrefab).transform.parent = GameService.Instance.GetGameplayScene().transform;
         }
     }
 }
