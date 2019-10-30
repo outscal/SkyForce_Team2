@@ -7,7 +7,9 @@ namespace  SkyForce.Enemy
     [CreateAssetMenu(menuName="ScriptableObjects/EnemyWaveScriptableObject")]
     public class EnemyWaveScriptableObject : ScriptableObject
     {
-        public EnemyTypeEnum EnemyType;
-        public int EnemyWaveSize; 
+        public EnemyScriptableObject EnemyProperties;
+        public int EnemyWaveSize;
+        public float[] offsetsFromCenter;
+        public float[] delayFromFirstEnemy;
     }
 }

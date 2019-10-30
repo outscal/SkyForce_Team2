@@ -9,7 +9,7 @@ namespace SkyForce.Enemy
     {
         public float SpawnInterval;
         public int NoOfSpawns;
-        public EnemyTypeEnum EnemyType;
+        public EnemyWaveScriptableObject EnemyWaveProperties;
 
     }
 }

@@ -12,5 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a312bac9e2a79d4bad66be619c1e0b6, type: 3}
   m_Name: lvl_sec_02
   m_EditorClassIdentifier: 
-  EnemyType: 1
+  EnemyProperties: {fileID: 11400000, guid: befc7c59608dccf4b92fe8b26cd8a4b0, type: 2}
   EnemyWaveSize: 1
+  offsetsFromCenter:
+  - 0
+  delayFromFirstEnemy:
+  - 0

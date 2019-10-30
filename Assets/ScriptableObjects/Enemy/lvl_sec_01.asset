@@ -12,5 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a312bac9e2a79d4bad66be619c1e0b6, type: 3}
   m_Name: lvl_sec_01
   m_EditorClassIdentifier: 
-  EnemyType: 0
-  EnemyWaveSize: 5
+  EnemyProperties: {fileID: 11400000, guid: e1f296b48691b2844a502904de87d33a, type: 2}
+  EnemyWaveSize: 3
+  offsetsFromCenter:
+  - 0
+  - 1
+  - -1
+  delayFromFirstEnemy:
+  - 0
+  - 1
+  - 2

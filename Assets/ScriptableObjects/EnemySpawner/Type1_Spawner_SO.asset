@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpawnInterval: 5
   NoOfSpawns: 12
-  EnemyType: 0
+  EnemyWaveProperties: {fileID: 11400000, guid: 72a0ad613db42bd4f8575b0c2154f8bc,
+    type: 2}

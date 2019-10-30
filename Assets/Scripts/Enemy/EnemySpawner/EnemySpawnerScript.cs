@@ -15,9 +15,7 @@ namespace SkyForce.Enemy
             {
                 Debug.Log("Collission detected....spawning enemy");
 
-                Vector3 enemySpawnPos = Camera.main.gameObject.transform.position.AddY(5).SetZ(0);
-
-                EnemyService.Instance.SpwanEnemy(spawnerProperties.EnemyType, enemySpawnPos);
+                EnemyService.Instance.SpawnWave(spawnerProperties.EnemyWaveProperties);
             }
         }
     }

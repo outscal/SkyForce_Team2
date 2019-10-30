@@ -7,31 +7,28 @@ namespace SkyForce.Enemy
 {
     public class EnemyService : GenericMonoSingleton<EnemyService>
     {
-        // private EnemyType1 type1Obj;
-
         private EnemyController enemyController;
-    
-        public EnemyScriptableObject[] enemyTypes;
-        void Start()
-        {
-            // SpwanEnemy(0, new Vector2(40, 50));
-        }
 
-        // Update is called once per frame
-        void Update()
+        private EnemyController SpwanEnemy(EnemyScriptableObject enemyProperties, Vector2 position)
         {
-            
-        }
-
-        public EnemyController SpwanEnemy(EnemyTypeEnum type, Vector2 position)
-        {
-            int index = (int)type;
-            EnemyScriptableObject enemyScriptableObject = enemyTypes[index]; 
-            EnemyModel EnemyModel = new EnemyModel(enemyScriptableObject);
-            EnemyView EnemyView = enemyScriptableObject.EnemyView;   
+            EnemyModel EnemyModel = new EnemyModel(enemyProperties);
+            EnemyView EnemyView = enemyProperties.EnemyView;   
             enemyController = new EnemyController(EnemyModel, EnemyView, position);
             
             return enemyController;
         }
+
+        public async void SpawnWave(EnemyWaveScriptableObject waveProperties)
+        {
+            for (int i = 0; i < waveProperties.EnemyWaveSize; i++)
+            {
+                Vector3 enemySpawnPos = Camera.main.gameObject.transform.position.AddY(5).SetZ(0);
+                SpwanEnemy(waveProperties.EnemyProperties, enemySpawnPos);
+                if(i+1 < waveProperties.EnemyWaveSize)
+                {
+                    await new WaitForSeconds(waveProperties.delayFromFirstEnemy[i+1]);
+                }
+            }
+        } 
     }
 }
