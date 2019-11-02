@@ -336,9 +336,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3ef82a51bb2e0745ac3749c2e7186d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyTypes:
-  - {fileID: 11400000, guid: e1f296b48691b2844a502904de87d33a, type: 2}
-  - {fileID: 11400000, guid: befc7c59608dccf4b92fe8b26cd8a4b0, type: 2}
 --- !u!4 &233401799
 Transform:
   m_ObjectHideFlags: 0
@@ -887,6 +884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 183344023}
+  scoreText: {fileID: 778490499}
 --- !u!1 &1124842761
 GameObject:
   m_ObjectHideFlags: 0

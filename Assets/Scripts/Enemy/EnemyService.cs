@@ -22,7 +22,7 @@ namespace SkyForce.Enemy
         {
             for (int i = 0; i < waveProperties.EnemyWaveSize; i++)
             {
-                Vector3 enemySpawnPos = Camera.main.gameObject.transform.position.AddY(5).SetZ(0);
+                Vector3 enemySpawnPos = Camera.main.gameObject.transform.position.AddY(5).SetZ(0).AddX(waveProperties.offsetsFromCenter[i]);
                 SpwanEnemy(waveProperties.EnemyProperties, enemySpawnPos);
                 if(i+1 < waveProperties.EnemyWaveSize)
                 {

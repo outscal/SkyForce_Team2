@@ -11,10 +11,17 @@ namespace SkyForce.UIManagers
     {
         [SerializeField]
         private Slider HealthBar;
+        [SerializeField]
+        private Text scoreText;
 
         public void UpdateUIHealthBar()
         {
             HealthBar.value = PlayerService.Instance.GetPlayerHealth();
+        }
+
+        public void UpdateUIScore()
+        {
+            scoreText.text = (PlayerService.Instance.GetKill() * 10).ToString("0000");
         }
     }
 }

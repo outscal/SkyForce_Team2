@@ -13,4 +13,9 @@ public static class Vector3Extension
     {
         return new Vector3(vec1.x, vec1.y + yOffset, vec1.z);
     }
+
+    public static Vector3 AddX(this Vector3 vec1, float xOffset)
+    {
+        return new Vector3(vec1.x + xOffset, vec1.y, vec1.z);
+    }
 }

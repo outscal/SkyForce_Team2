@@ -31,5 +31,15 @@ namespace SkyForce.Player
         {
             return fighterJet.GetHealth();
         }
+
+        public void AddKill()
+        {
+            fighterJet.AddKill();
+        }
+
+        public int GetKill()
+        {
+            return fighterJet.GetKill();
+        }
     }
 }

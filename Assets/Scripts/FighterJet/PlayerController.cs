@@ -75,5 +75,16 @@ namespace SkyForce.Player
         {
             return model.Health;
         }
+
+        public void AddKill()
+        {
+            model.Kills = model.Kills + 1;
+            GameplayUIService.Instance.UpdateUIScore();
+        }
+
+        public int GetKill()
+        {
+            return model.Kills;
+        }
     }
 }

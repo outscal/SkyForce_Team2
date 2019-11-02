@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SkyForce.Bullet;
 using SkyForce.Game;
+using SkyForce.Player;
 
 namespace SkyForce.Enemy
 {
@@ -51,6 +52,7 @@ namespace SkyForce.Enemy
             if (enemyModel.Health <= 0)
             {
                 enemyModel.Health = 0;//avoiding negative values
+                PlayerService.Instance.AddKill();
                 DestroyEnemy();
             }
             // GameplayUIService.Instance.UpdateUIHealthBar();
