@@ -18,7 +18,7 @@ namespace  SkyForce.Bullet
         {
             if (isViewEnabled)
             {
-                gameObject.transform.position += direction/6; 
+                gameObject.transform.position += direction/9; 
             }
         }
 

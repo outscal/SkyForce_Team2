@@ -6,7 +6,7 @@ public class CameraController : MonoBehaviour
 	public float moveSpeed {get; set;}
 	void Start ()
 	{
-		moveSpeed = 1.0f;
+		moveSpeed = 0.75f;
 	}
 
 	// After the standard 'Update()' loop runs, and just before each frame is rendered..

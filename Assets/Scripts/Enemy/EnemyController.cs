@@ -4,6 +4,7 @@ using UnityEngine;
 using SkyForce.Bullet;
 using SkyForce.Game;
 using SkyForce.Player;
+using SkyForce.Explosions;
 
 namespace SkyForce.Enemy
 {
@@ -41,6 +42,7 @@ namespace SkyForce.Enemy
 
         private void DestroyEnemy()
         {
+            ExplosionService.Instance.CreateExplosion(enemyView.GetPosition());
             enemyModel = null;
             enemyView.DestroyEnemyView();
             enemyView = null;

@@ -9,7 +9,7 @@ namespace SkyForce.Enemy
     {
         private EnemyController enemyController;
 
-        private EnemyController SpwanEnemy(EnemyScriptableObject enemyProperties, Vector2 position)
+        private EnemyController SpwanEnemy(EnemyScriptableObject enemyProperties, Vector3 position)
         {
             EnemyModel EnemyModel = new EnemyModel(enemyProperties);
             EnemyView EnemyView = enemyProperties.EnemyView;   

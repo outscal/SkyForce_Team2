@@ -130,7 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 14526871}
   - component: {fileID: 14526872}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BGScroller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -145,13 +145,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14526870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2017801933}
   - {fileID: 452379670}
   m_Father: {fileID: 54330809}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &14526872
 MonoBehaviour:
@@ -201,6 +201,7 @@ Transform:
   - {fileID: 1753231393}
   - {fileID: 233401799}
   - {fileID: 1352848532}
+  - {fileID: 1105603945}
   - {fileID: 14526871}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -426,7 +427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 452379670}
   - component: {fileID: 452379671}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Image2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -885,6 +886,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HealthBar: {fileID: 183344023}
   scoreText: {fileID: 778490499}
+--- !u!1 &1105603944
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1105603945}
+  - component: {fileID: 1105603946}
+  m_Layer: 0
+  m_Name: ExplosionService
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1105603945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105603944}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 54330809}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1105603946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105603944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75bbf9522a4037b46aa0a449266a7715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionPrefabs:
+  - {fileID: 9129477095969799444, guid: 71718e687d03c9c4fb82f395bf271b29, type: 3}
 --- !u!1 &1124842761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,7 +1386,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2017801933}
   - component: {fileID: 2017801934}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Image!
   m_TagString: Untagged
   m_Icon: {fileID: 0}
