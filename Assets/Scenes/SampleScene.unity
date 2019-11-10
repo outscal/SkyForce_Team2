@@ -340,9 +340,15 @@ MonoBehaviour:
   SoundsList:
   - soundTag: 0
     loop: 0
-    audioClip: {fileID: 0}
-    volume: 0
-    pitch: 0
+    audioClip: {fileID: 8300000, guid: b681386139a2f4d438eb5b55d01fb773, type: 3}
+    volume: 0.938
+    pitch: 1
+    audioSource: {fileID: 0}
+  - soundTag: 1
+    loop: 1
+    audioClip: {fileID: 8300000, guid: 579901d7c0aac3649a26d74a869be38e, type: 3}
+    volume: 0.366
+    pitch: 1
     audioSource: {fileID: 0}
 --- !u!4 &208045873
 Transform:

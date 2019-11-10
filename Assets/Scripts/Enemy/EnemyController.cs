@@ -5,6 +5,7 @@ using SkyForce.Bullet;
 using SkyForce.Game;
 using SkyForce.Player;
 using SkyForce.Explosions;
+using SkyForce.Audio;
 
 namespace SkyForce.Enemy
 {
@@ -43,6 +44,11 @@ namespace SkyForce.Enemy
         private void DestroyEnemy()
         {
             ExplosionService.Instance.CreateExplosion(enemyView.GetPosition());
+            AudioService.Instance.PlaySound(SoundTag.ExplosionEffect);
+            if(enemyModel.EnemyType == EnemyTypeEnum.EnemyCommander)
+            {
+                GameService.Instance.GameOver();
+            }
             enemyModel = null;
             enemyView.DestroyEnemyView();
             enemyView = null;

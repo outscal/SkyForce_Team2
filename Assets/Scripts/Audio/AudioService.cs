@@ -9,6 +9,7 @@ namespace SkyForce.Audio
     public enum SoundTag
     {
         ExplosionEffect,
+        GameplayBGM,
         BulletFiring
     }
 
@@ -54,6 +55,17 @@ namespace SkyForce.Audio
 			    return;
             }
             s.audioSource.Play();
+        }
+
+        public void StopSound(SoundTag audioTag)
+        {
+            GameSound s = Array.Find(SoundsList, Sound => Sound.soundTag == audioTag);
+            if (s == null)
+            {
+                Debug.LogWarning("Audio missing!!!!!");
+			    return;
+            }
+            s.audioSource.Stop();
         }
     }
 }

@@ -7,6 +7,6 @@ namespace SkyForce.Enemy
     public enum EnemyTypeEnum
     {
         EnemyType1,
-        EnemyType2
+        EnemyCommander
     }
 }

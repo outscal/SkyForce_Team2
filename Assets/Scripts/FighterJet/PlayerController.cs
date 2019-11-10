@@ -4,6 +4,8 @@ using UnityEngine;
 using SkyForce.Bullet;
 using SkyForce.Game;
 using SkyForce.UIManagers;
+using SkyForce.Explosions;
+using SkyForce.Audio;
 
 namespace SkyForce.Player
 {
@@ -66,6 +68,8 @@ namespace SkyForce.Player
 
         private void DestroyPlayer()
         {
+            ExplosionService.Instance.CreateExplosion(view.GetPosition());
+            AudioService.Instance.PlaySound(SoundTag.ExplosionEffect);
             model = null;
             view.DestroyView();
             view = null;
