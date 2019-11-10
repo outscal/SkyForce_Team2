@@ -23,7 +23,7 @@ namespace SkyForce.Game
 
         public async void GameOver()
         {
-            await new WaitForSeconds(1.0f);
+            await new WaitForSeconds(3.0f);
             gameController.ChangeGameState(gameOverState);
         }
 

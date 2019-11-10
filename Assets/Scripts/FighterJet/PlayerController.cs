@@ -61,6 +61,7 @@ namespace SkyForce.Player
             }
             else
             {
+                AudioService.Instance.PlaySound(SoundTag.PlayerHit);
                 GameplayUIService.Instance.UpdateUIHealthBar();
             }
             return true;
