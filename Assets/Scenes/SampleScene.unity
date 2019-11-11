@@ -165,9 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e401f5ff38c3e4d8dc93955c598432, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundImage:
-  - {fileID: 2017801932}
-  - {fileID: 452379669}
 --- !u!1 &54330808
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,6 +439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 296627409}
   - component: {fileID: 296627410}
+  - component: {fileID: 296627411}
   m_Layer: 0
   m_Name: GameWinScene
   m_TagString: Untagged
@@ -476,6 +474,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f64f16d45bf475428c83f28fbcbed0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &296627411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 296627408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 074743649bf7e6f49993b2c5ef30faf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAgainBtn: {fileID: 1179675429}
+  backBtn: {fileID: 961207614}
+  score: {fileID: 1364382936}
 --- !u!1 &299226822
 GameObject:
   m_ObjectHideFlags: 0
@@ -581,6 +594,7 @@ GameObject:
   m_Component:
   - component: {fileID: 364562018}
   - component: {fileID: 364562019}
+  - component: {fileID: 364562020}
   m_Layer: 0
   m_Name: LevelSelectScene
   m_TagString: Untagged
@@ -615,6 +629,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9acc03630c0a83a4cbb984a1f9cd6446, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &364562020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364562017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c582898ecf885054dbb4264278e3e48a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelButtons:
+  - {fileID: 1544785189}
+  - {fileID: 1133733175}
+  - {fileID: 1661737561}
+  - {fileID: 475725034}
 --- !u!1 &364773096
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,6 +1059,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8555a34c842eef47b6f6c0efdf02287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backgroundImage:
+  - {fileID: 2017801932}
+  - {fileID: 452379669}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1966,7 +2000,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 45
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 4
@@ -3130,6 +3164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameplayState: {fileID: 54330810}
   gameOverState: {fileID: 1915597996}
+  levelSelectionState: {fileID: 364562019}
+  gameWinState: {fileID: 296627410}
 --- !u!1 &1390242131
 GameObject:
   m_ObjectHideFlags: 0
@@ -4571,6 +4607,12 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     audioSource: {fileID: 0}
+  - soundTag: 3
+    loop: 1
+    audioClip: {fileID: 8300000, guid: fc505e1671e8f614f92c8857e104b9bb, type: 3}
+    volume: 0.597
+    pitch: 1
+    audioSource: {fileID: 0}
 --- !u!4 &1870476406
 Transform:
   m_ObjectHideFlags: 0
@@ -4676,6 +4718,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1915597997}
   - component: {fileID: 1915597996}
+  - component: {fileID: 1915597998}
   m_Layer: 0
   m_Name: GameOverScene
   m_TagString: Untagged
@@ -4710,6 +4753,21 @@ Transform:
   m_Father: {fileID: 849425370}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1915597998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915597995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 130338aea02ce6740b17c008969f13e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playAgainBtn: {fileID: 1529934284}
+  backBtn: {fileID: 1685929067}
+  score: {fileID: 815710335}
 --- !u!1 &2006317686
 GameObject:
   m_ObjectHideFlags: 0

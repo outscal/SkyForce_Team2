@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using SkyForce.Generics;
 using SkyForce.Game.GameStates;
+using SkyForce.Level;
 
 namespace SkyForce.Game
 {
@@ -12,12 +13,16 @@ namespace SkyForce.Game
         private GameplayState gameplayState;
         [SerializeField]
         private GameOverState gameOverState;
+        [SerializeField]
+        private LevelSelectionState levelSelectionState;
+        [SerializeField]
+        private GameWinState gameWinState;
         private GameController gameController;
         void Start()
         {
             if(gameplayState != null)
             {
-                gameController = new GameController(gameplayState);
+                gameController = new GameController(levelSelectionState);
             }
         }
 
@@ -27,9 +32,20 @@ namespace SkyForce.Game
             gameController.ChangeGameState(gameOverState);
         }
 
+        public void EnterLevelSelectionScene()
+        {
+            gameController.ChangeGameState(levelSelectionState);
+        }
+
         public GameplayState GetGameplayScene()
         {
             return gameplayState;
+        }
+
+        public void StartGamePlay(int lvlID)
+        {
+            gameController.ChangeGameState(gameplayState);
+            LevelService.Instance.CreateLevel(lvlID);
         }
     }
 }

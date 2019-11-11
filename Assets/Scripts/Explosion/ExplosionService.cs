@@ -14,7 +14,7 @@ namespace SkyForce.Explosions
         public void CreateExplosion(Vector3 explodeAt)
         {
             int explosionIndex = Random.Range(0, explosionPrefabs.Length);
-            ExplosionView explosion = GameObject.Instantiate(explosionPrefabs[explosionIndex], explodeAt, Quaternion.identity); 
+            ExplosionView explosion = GameObject.Instantiate(explosionPrefabs[explosionIndex], explodeAt.SetZ(-3.0f), Quaternion.identity); 
             explosion.transform.parent = GameService.Instance.GetGameplayScene().transform;
         }
     }

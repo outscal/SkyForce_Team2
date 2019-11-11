@@ -9,9 +9,33 @@ namespace SkyForce.Level
     {
         [SerializeField]
         private LevelView[] levelPrefab;
-        void Start()
+        private LevelController controller;
+        private int currentLevel;
+        private int lastScore;
+
+        public void CreateLevel(int lvlID)
         {
-            new LevelController(levelPrefab[0]);
+            if(controller != null)
+            {
+                controller.DestroyLevel();
+            }
+            currentLevel = lvlID;
+            controller = new LevelController(levelPrefab[currentLevel]);
+        }
+
+        public int GetCurrentLevel()
+        {
+            return currentLevel;
+        }
+
+        public int GetLatestScore()
+        {
+            return lastScore;
+        }
+
+        public void SetLatestScore(int score)
+        {
+            lastScore = score;
         }
     }
 }

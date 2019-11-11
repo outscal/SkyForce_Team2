@@ -6,6 +6,7 @@ using SkyForce.Game;
 using SkyForce.UIManagers;
 using SkyForce.Explosions;
 using SkyForce.Audio;
+using SkyForce.Level;
 
 namespace SkyForce.Player
 {
@@ -14,19 +15,35 @@ namespace SkyForce.Player
         private PlayerModel model;
         private PlayerView view;
         private bool isLoaded;
-        public PlayerController(PlayerScriptableObject fighterJetProperties)
+        private PlayerScriptableObject fighterJetProperties;
+        public PlayerController(PlayerScriptableObject _fighterJetProperties)
         {
-            model = new PlayerModel(fighterJetProperties);
-            view = GameObject.Instantiate<PlayerView>(model.JetPrefab, new Vector2(0,0), Quaternion.identity);
+            fighterJetProperties = _fighterJetProperties;
+        }
+
+        public void InitPlayer()
+        {
+            if (model == null)
+            {
+                model = new PlayerModel(fighterJetProperties);
+            }
+            if (view == null)
+            {
+                view = GameObject.Instantiate<PlayerView>(model.JetPrefab, new Vector2(0,0), Quaternion.identity);
+            }
             view.transform.parent = GameService.Instance.GetGameplayScene().transform;
             view.SetController(this);
             isLoaded = true;
-            // GameplayUIService.Instance.UpdateUIHealthBar();
+            GameplayUIService.Instance.UpdateUIHealthBar();
+            GameplayUIService.Instance.UpdateUIScore();
         }
 
         public void SetPositionTo(Vector3 newPosition)
         {
-            view.SetPositionTo(newPosition);
+            if(view != null)
+            {
+                view.SetPositionTo(newPosition);
+            }
         }
 
         public Vector3 GetPosition()
@@ -52,10 +69,15 @@ namespace SkyForce.Player
 
         public bool TakeDamage(float destruction)
         {
+            if(model==null)
+            {
+                return false;
+            }
             model.Health -= destruction;
             if (model.Health <= 0)
             {
                 model.Health = 0;//avoiding negative values
+                GameplayUIService.Instance.UpdateUIHealthBar();
                 DestroyPlayer();
                 GameService.Instance.GameOver();
             }
@@ -69,6 +91,7 @@ namespace SkyForce.Player
 
         private void DestroyPlayer()
         {
+            LevelService.Instance.SetLatestScore(model.Kills*10);
             ExplosionService.Instance.CreateExplosion(view.GetPosition());
             AudioService.Instance.PlaySound(SoundTag.ExplosionEffect);
             model = null;
@@ -83,6 +106,10 @@ namespace SkyForce.Player
 
         public void AddKill()
         {
+            if (model == null)
+            {
+                return;
+            }
             model.Kills = model.Kills + 1;
             GameplayUIService.Instance.UpdateUIScore();
         }

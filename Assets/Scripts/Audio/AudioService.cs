@@ -10,7 +10,8 @@ namespace SkyForce.Audio
     {
         ExplosionEffect,
         GameplayBGM,
-        PlayerHit
+        PlayerHit,
+        MenuBGM
     }
 
     [System.Serializable]

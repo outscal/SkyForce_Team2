@@ -7,9 +7,16 @@ namespace SkyForce.Level
 {
     public class LevelController
     {
+        private LevelView levelView;
         public LevelController(LevelView levelPrefab)
         {
-            GameObject.Instantiate(levelPrefab).transform.parent = GameService.Instance.GetGameplayScene().transform;
+            levelView = GameObject.Instantiate(levelPrefab);
+            levelView.transform.parent = GameService.Instance.GetGameplayScene().transform;
+        }
+
+        public void DestroyLevel()
+        {
+            GameObject.Destroy(levelView);
         }
     }
 }

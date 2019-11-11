@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using SkyForce.Audio;
+using SkyForce.Player;
 
 namespace SkyForce.Game.GameStates
 {
@@ -11,6 +12,8 @@ namespace SkyForce.Game.GameStates
         {
             base.OnEnterState();
             AudioService.Instance.PlaySound(SoundTag.GameplayBGM);
+            Camera.main.GetComponent<CameraController>().ResetPosition();
+            PlayerService.Instance.ResetPlayer();
         }
 
         public override void OnExitState()

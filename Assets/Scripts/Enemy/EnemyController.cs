@@ -6,6 +6,7 @@ using SkyForce.Game;
 using SkyForce.Player;
 using SkyForce.Explosions;
 using SkyForce.Audio;
+using SkyForce.Level;
 
 namespace SkyForce.Enemy
 {
@@ -47,6 +48,7 @@ namespace SkyForce.Enemy
             AudioService.Instance.PlaySound(SoundTag.ExplosionEffect);
             if(enemyModel.EnemyType == EnemyTypeEnum.EnemyCommander)
             {
+                LevelService.Instance.SetLatestScore(PlayerService.Instance.GetKill()*10);
                 GameService.Instance.GameOver();
             }
             enemyModel = null;

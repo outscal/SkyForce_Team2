@@ -14,7 +14,16 @@ namespace SkyForce.Player
 
         void Start()
         {
-            fighterJet = new PlayerController(fighterJetData);
+            
+        }
+
+        public void ResetPlayer()
+        {
+            if (fighterJet == null)
+            {
+                fighterJet = new PlayerController(fighterJetData);
+            }
+            fighterJet.InitPlayer();
         }
 
         public void SetFighterJetTo(Vector3 position)
