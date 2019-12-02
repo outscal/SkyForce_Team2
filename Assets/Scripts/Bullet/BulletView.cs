@@ -22,6 +22,12 @@ namespace  SkyForce.Bullet
             }
         }
 
+        public void SetColour(Color color)
+        {
+            SpriteRenderer renderer = gameObject.GetComponent<SpriteRenderer>();
+            renderer.color = color;
+        }
+
         public void ResetPositionTo(Vector3 newPosition)
         {
             gameObject.transform.position = newPosition;

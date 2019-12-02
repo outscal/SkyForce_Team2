@@ -24,6 +24,7 @@ namespace  SkyForce.Bullet
             view.ResetDirectionTo(direction);
             view.SetViewStateEnabled(true);
             view.SetController(this);
+            view.SetColour(_source == GameLayer.Player ? Color.green : Color.red);
             InitiateBurnoutTimer();
         }
 

@@ -23,7 +23,7 @@ namespace SkyForce.UIScreens
             backBtn.onClick.AddListener(() => Exit());
         }
 
-        private void Awake() 
+        private void OnEnable() 
         {
             score.text = LevelService.Instance.GetLatestScore().ToString();
         }
